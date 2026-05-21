@@ -6,7 +6,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 model = joblib.load(os.path.join(BASE_DIR, "knn_heart_model.pkl"))
-scaler = joblib.load(os.path.join(BASE_DIR, "scaler.pkl"))
+scaler = joblib.load(os.path.join(BASE_DIR, "heart_scaler.pkl"))
 expected_columns = joblib.load(os.path.join(BASE_DIR, "heart_columns.pkl"))
 
 st.title("Heart stroke prediction by priyanshi")
