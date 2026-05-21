@@ -1,10 +1,13 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import os
 
-model = joblib.load("knn_heart_model.pkl")
-scaler = joblib.load("heart_scaler.pkl")
-expected_columns = joblib.load("heart_columns.pkl")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model = joblib.load(os.path.join(BASE_DIR, "knn_heart_model.pkl"))
+scaler = joblib.load(os.path.join(BASE_DIR, "scaler.pkl"))
+expected_columns = joblib.load(os.path.join(BASE_DIR, "heart_columns.pkl"))
 
 st.title("Heart stroke prediction by priyanshi")
 st.markdown("Provide the following details")
